@@ -21,14 +21,14 @@ console.log("apple" + " killer" + 3.5);
 
 // Const / Let / Var
 
-const a = 10;
-const b = 2;
+const p = 10;
+const y = 2;
 const text = "Hidden ";
 const myName = "SH";
 
-console.log(a + b);
-console.log(a * b);
-console.log(a / b);
+console.log(p + y);
+console.log(p * y);
+console.log(p / y);
 console.log(text + myName);
 
 console.log("LET");
@@ -214,3 +214,37 @@ calculator.add(2, 2);
 calculator.subtract(2, 2);
 calculator.divide(2, 2);
 calculator.power(2, 2);
+
+// Returns
+
+let a = "var1";
+let b = "var2";
+
+const calc = {
+  plus: function (a, b) {
+    return a + b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  times: function (a, b) {
+    return a * b;
+  },
+  divide: function (a, b) {
+    return a / b;
+  },
+  power: function (a, b) {
+    return a ** b;
+  },
+};
+
+a = 2;
+b = 3;
+
+const plusResult = calc.plus(a, b);
+const minusResult = calc.minus(plusResult, b);
+const timesResult = calc.times(minusResult, minusResult);
+const divideResult = calc.divide(timesResult, a);
+const powerResult = calc.power(divideResult, divideResult);
+
+console.log(powerResult);
