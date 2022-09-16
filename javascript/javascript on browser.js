@@ -1,10 +1,34 @@
-document.getElementById("title");
-const title = document.getElementById("title");
+const b = document.querySelector(".box:nth-child(2) span");
+const v = document.querySelector(".box:nth-child(3) span");
+const p = document.querySelector(".box:nth-child(4) span");
 
-console.log(title);
+function handleEventClickB() {
+  b.style.color = "white";
+  v.style.color = "black";
+  p.style.color = "black";
+}
 
-console.dir(title);
+function handleEventClickV() {
+  b.style.color = "black";
+  v.style.color = "white";
+  p.style.color = "black";
+}
 
-console.log(title.className);
+function handleEventClickP() {
+  b.style.color = "black";
+  v.style.color = "black";
+  p.style.color = "white";
+}
 
-title.innerText = "brrr";
+b.addEventListener("click", handleEventClickB);
+v.addEventListener("click", handleEventClickV);
+p.addEventListener("click", handleEventClickP);
+
+const title = document.querySelector(".title");
+
+function clickTitle() {
+  console.log("Titel!");
+  alert("Titel!");
+}
+
+title.addEventListener("click", clickTitle);
