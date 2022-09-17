@@ -39,3 +39,11 @@ function rs() {
 }
 
 window.addEventListener("resize", rs);
+
+function cp() {
+  document.body.style.backgroundColor = "tomato";
+}
+
+const titel = document.querySelector(".title");
+
+window.addEventListener("copy", cp);
