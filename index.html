@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="css/style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Momentum</title>
+    <title>Document</title>
   </head>
   <body>
-    <h1 class="title" id="title">Holla!</h1>
-    <div class="box">
-      <span class="brt"> BRTBRTBRT </span>
+    <div class="login-form">
+      <input type="text" placeholder="What is your name?" />
+      <button>submit</button>
     </div>
-    <div class="box">
-      <span class="vrt"> VRTVRTVRT </span>
-    </div>
-    <div class="box">
-      <span class="prt"> PRTPRTPRT </span>
-    </div>
-    <button>?</button>
+    <!-- Below here is where HTML does all the js task for me -->
+    <form class="login-form-alt">
+      <input
+        required
+        maxlength="20"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <button>submit</button>
+    </form>
   </body>
-  <script src="javascript/css-in-javascript.js"></script>
+  <script src="javascript/app.js"></script>
 </html>
