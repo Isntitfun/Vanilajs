@@ -1,3 +1,106 @@
+html {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bgimage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  z-index: -1;
+}
+
+body {
+  width: 100vh;
+  height: 100vh;
+  background-image: url("file:///C:/Users/%EB%B3%B8%EB%B6%80/Documents/GitHub/Vanilajs/img/5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.momentum__main-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  color: white;
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 70px;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+}
+
+.login-form input {
+  outline: none;
+  border: none;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-weight: 100;
+}
+
+.login-form input::placeholder {
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.login-form button {
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 25px;
+  display: none;
+}
+.greeting {
+  outline: none;
+  margin: 0px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-weight: 100;
+}
+
 .hidden {
   display: none;
+}
+
+.quote-box {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  bottom: 7px;
+}
+
+.quote,
+.author {
+  color: white;
+  font-size: 14px;
+  margin-top: 7px;
+  font-weight: 500;
+}
+
+.quote {
+  font-weight: 100;
 }
