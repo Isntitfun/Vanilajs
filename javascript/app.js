@@ -6,9 +6,9 @@ const savedUsername = localStorage.getItem("username");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME = "username";
 
-function createGreeting(username) {
+function createGreeting(value) {
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  greeting.innerText = `Hello ${username}!`;
+  greeting.innerText = `Hello ${value}!`;
 }
 
 function handleSubmitForm(event) {
