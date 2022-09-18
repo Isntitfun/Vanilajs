@@ -1,16 +1,27 @@
 const loginForm = document.querySelector(".login-form");
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
+const loginInput = document.querySelector(".login-form input");
+const greeting = document.querySelector(".greeting");
+const savedUsername = localStorage.getItem("username");
 
-function handleLoginButtonClick() {
-  const value = loginInput.value;
-  if (value === "") {
-    alert("Please enter your name.");
-  } else if (value.length > 20) {
-    alert("The name must be shorter than 20 letters");
-  } else {
-    console.log("Hello " + value + "!");
-  }
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME = "username";
+
+function createGreeting(username) {
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+  greeting.innerText = `Hello ${username}!`;
 }
 
-loginButton.addEventListener("click", handleLoginButtonClick);
+function handleSubmitForm(event) {
+  event.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  const username = loginInput.value;
+  localStorage.setItem(USERNAME, username);
+  createGreeting(username);
+}
+
+if (localStorage.getItem(USERNAME) === null) {
+  loginForm.addEventListener("submit", handleSubmitForm);
+} else {
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  createGreeting(savedUsername);
+}
