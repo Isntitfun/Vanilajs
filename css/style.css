@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   background-image: url("file:///C:/Users/%EB%B3%B8%EB%B6%80/Documents/GitHub/Vanilajs/img/5.jpg");
   background-size: cover;
@@ -23,6 +23,7 @@ body {
 }
 
 .momentum__main-column {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +46,7 @@ body {
   outline: none;
   border: none;
   text-align: center;
-  font-size: 7vmin;
+  font-size: 6vmin;
   color: white;
   font-weight: 100;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
@@ -80,7 +81,7 @@ body {
   outline: none;
   margin: 0px;
   text-align: center;
-  font-size: 7vmin;
+  font-size: 6vmin;
   color: white;
   font-weight: 100;
   transition: all 0.2s ease-out;
@@ -133,6 +134,46 @@ body {
   transform: translateY(6px);
 }
 
+.momentum__right-column {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.momentum__left-column {
+  width: 25%;
+}
+
+.todo-form {
+  margin-top: 10px;
+  width: 100%;
+}
+.todo-form input {
+  outline: none;
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-size: 4vmin;
+  color: white;
+  font-weight: 100;
+}
+
+.todo-form input:focus::placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+.todo-form input::placeholder {
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  transition: all 0.2s ease-out;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
 .todo-list li {
   color: white;
 }
