@@ -17,6 +17,7 @@ function handleSubmitForm(event) {
   const username = loginInput.value;
   localStorage.setItem(USERNAME, username);
   createGreeting(username);
+  todoForm.classList.remove(HIDDEN_CLASSNAME);
 }
 
 if (savedUsername === null) {

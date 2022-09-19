@@ -132,3 +132,11 @@ body {
   opacity: 1;
   transform: translateY(6px);
 }
+
+.todo-list li {
+  color: white;
+}
+
+.todo-list span {
+  color: white;
+}
