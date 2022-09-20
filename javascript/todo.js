@@ -2,7 +2,7 @@ const todolist = document.querySelector(".todo-list");
 const todoForm = document.querySelector(".todo-form");
 const todoInput = todoForm.querySelector("input");
 
-const todos = [];
+let todos = [];
 
 const TODOS_KEY = "todos";
 
@@ -14,21 +14,26 @@ if (localStorage.getItem("username") === null) {
 
 function deleteTodoItem(event) {
   const deleteTarget = event.target.parentElement;
+  alert(deleteTarget.id);
   deleteTarget.remove();
 }
 
-function saveTodos(newTodo) {
-  todos.push(newTodo);
+function saveTodos(newTodoObj) {
+  todos.push(newTodoObj);
   localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
-function createTodoItem(newTodo) {
+function createTodoItem(newTodoObj) {
   const todo_li = document.createElement("li");
   const todo_span = document.createElement("span");
   const todo_btn = document.createElement("button");
+
   todo_btn.innerText = "X";
   todo_btn.addEventListener("click", deleteTodoItem);
-  todo_span.innerText = newTodo;
+
+  todo_span.innerText = newTodoObj.text;
+  todo_li.id = newTodoObj.id;
+
   todo_li.appendChild(todo_span);
   todo_li.appendChild(todo_btn);
   todolist.appendChild(todo_li);
@@ -37,14 +42,19 @@ function createTodoItem(newTodo) {
 function handleTodoSubmit(event) {
   event.preventDefault();
   const newTodo = todoInput.value;
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+  saveTodos(newTodoObj);
+  createTodoItem(newTodoObj);
   todoInput.value = "";
-  saveTodos(newTodo);
-  createTodoItem(newTodo);
 }
 
 todoForm.addEventListener("submit", handleTodoSubmit);
 
 if (localStorage.getItem(TODOS_KEY) !== null) {
   const savedTodos = JSON.parse(localStorage.getItem(TODOS_KEY));
-  savedTodos.forEach((item) => createTodoItem(item));
+  todos = savedTodos;
+  savedTodos.forEach(createTodoItem);
 }
