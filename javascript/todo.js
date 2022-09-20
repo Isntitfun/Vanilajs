@@ -14,7 +14,11 @@ if (localStorage.getItem("username") === null) {
 
 function deleteTodoItem(event) {
   const deleteTarget = event.target.parentElement;
-  alert(deleteTarget.id);
+  const updatedTodos = todos.filter(
+    (todo) => todo.id !== parseInt(deleteTarget.id)
+  );
+  todos = updatedTodos;
+  localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
   deleteTarget.remove();
 }
 
